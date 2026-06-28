@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مانجا زون | MangaZone</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/umd/bootstrap.rtl.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <!-- هيدر أمازون داكن -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-amazon-dark sticky-top py-2">
+        <div class="container-fluid px-lg-5">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+    <img src="logo.png" alt="Manga Zone" style="height: 55px; object-fit: contain;">
+</a>
+            
+            <!-- بار البحث -->
+            <div class="flex-grow-1 mx-lg-4 my-2 my-lg-0">
+                <div class="input-group amzn-search">
+                    <input type="text" id="searchInput" class="form-control bg-dark-input text-white border-0 shadow-none" placeholder="ابحث في MangaZone الحصرية بالجنيه المصري...">
+                    <button class="btn btn-amazon-search" type="button"><i class="fas fa-search text-dark"></i></button>
+                </div>
+            </div>
+
+            <!-- زر ينقلك لصفحة السلة الخاصة -->
+            <div class="d-flex align-items-center gap-3 text-white">
+                <a href="cart.html" class="btn btn-link position-relative text-white p-0 nav-link">
+                    <i class="fas fa-shopping-cart fs-3 text-warning"></i>
+                    <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- محتوى المتجر -->
+    <div class="container-fluid px-lg-5 py-4">
+        <div class="row">
+            <!-- الفلاتر الجانبية الداكنة -->
+            <aside class="col-lg-2 d-none d-lg-block border-start border-secondary border-opacity-25">
+                <h6 class="fw-bold mb-3 text-warning">الأقسام</h6>
+                <ul class="list-unstyled amzn-aside-links mb-4">
+                    <li><a href="#" class="active" onclick="filterByAside('all', this)">كل المانجا</a></li>
+                    <li><a href="#" onclick="filterByAside('shonen', this)">مانجا شونين (Shonen)</a></li>
+                    <li><a href="#" onclick="filterByAside('seinen', this)">مانجا سينين (Seinen)</a></li>
+                    <li><a href="#" onclick="filterByAside('Offers', this)">تخفيضات وعروض 🔥</a></li>
+                </ul>
+
+                <h6 class="fw-bold mb-3 text-warning">السعر (ج.م)</h6>
+                <ul class="list-unstyled amzn-aside-links">
+                    <li><a href="#" onclick="filterByPrice(0, 300)">أقل من 300 ج.م</a></li>
+                    <li><a href="#" onclick="filterByPrice(300, 700)">300 ج.م إلى 700 ج.م</a></li>
+                    <li><a href="#" onclick="filterByPrice(700, 9999)">أكثر من 700 ج.م</a></li>
+                </ul>
+            </aside>
+
+            <!-- شبكة المنتجات -->
+            <main class="col-lg-10">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3" id="products-grid">
+                    <!-- تعبئة المانجا تلقائياً من الـ JS -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

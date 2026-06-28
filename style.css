@@ -1,0 +1,107 @@
+:root {
+    --amzn-navy: #131a22;
+    --amzn-dark: #232f3e;
+    --amzn-orange: #ff9900;
+    --bg-dark-body: #0f1115;
+    --bg-dark-card: #1a1d24;
+    --text-white: #ffffff;
+    --text-muted: #a2a6b0;
+}
+
+body.dark-theme {
+    background-color: var(--bg-dark-body);
+    color: var(--text-white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* الهيدر والبحث المظلم */
+.bg-amazon-dark { background-color: var(--amzn-navy) !important; }
+.amzn-logo { font-weight: 700; font-size: 1.5rem; color: #fff; text-decoration: none; }
+.amzn-logo span { color: var(--amzn-orange); }
+
+.bg-dark-input {
+    background-color: #2b3442 !important;
+    color: white !important;
+}
+.bg-dark-input::placeholder { color: #8792a2; }
+.btn-amazon-search { background-color: var(--amzn-orange); border: none; padding: 0 20px; }
+.btn-amazon-search:hover { background-color: #e68a00; }
+
+/* الروابط الجانبية */
+.amzn-aside-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    padding: 6px 0;
+    transition: 0.2s;
+}
+.amzn-aside-links a:hover, .amzn-aside-links a.active {
+    color: var(--amzn-orange);
+    padding-right: 5px;
+}
+
+/* كروت المنتجات الداكنة الفخمة */
+.bg-amazon-card { background-color: var(--bg-dark-card) !important; }
+.amzn-product-card {
+    background: var(--bg-dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 15px;
+    transition: all 0.2s ease;
+}
+.amzn-product-card:hover {
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.15);
+    border-color: var(--amzn-orange);
+}
+
+.amzn-img-box {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    background: #252932;
+    border-radius: 4px;
+    padding: 10px;
+}
+.amzn-img-box img { max-height: 100%; max-width: 100%; object-fit: contain; }
+.amzn-title { font-size: 0.95rem; font-weight: 600; height: 40px; overflow: hidden; color: #fff; }
+.stars-rating { color: #ffa41c; font-size: 0.85rem; }
+.amzn-price { font-size: 1.25rem; font-weight: 700; color: #ff5252; }
+
+/* أزرار أمازون */
+.btn-amazon-add {
+    background: linear-gradient(to bottom, #f7b143, #f09205);
+    border: 1px solid #a86603;
+    color: #111;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    width: 100%;
+    padding: 6px 0;
+}
+.btn-amazon-add:hover { background: #d98200; }
+
+/* عناصر كروت صفحة السلة */
+.cart-page-item {
+    background: #232731;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+/* تعديل الهيدر ليصبح ثابتاً وشفافاً زجاجياً عند النزول */
+.bg-amazon-dark {
+    background-color: rgba(19, 26, 34, 0.75) !important; /* درجة شفافية 75% من لون أمازون */
+    backdrop-filter: blur(12px); /* تأثير ضبابي فخم للمنتجات بالخلفية أثناء السكرول */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1080; /* يضمن بقاء الهيدر فوق الـ 50 مانجا دائماً */
+    transition: background-color 0.3s ease;
+}
+
+/* لمنع كروت المنتجات من التداخل مع الهيدر الشفاف بشكل سيء */
+#products-grid {
+    position: relative;
+    z-index: 1;
+}

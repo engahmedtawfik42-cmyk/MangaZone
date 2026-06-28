@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عربة التسوق | مانجا زون</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/umd/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-amazon-dark py-2">
+        <div class="container">
+            <a class="navbar-brand amzn-logo" href="index.html">manga<span>zone</span></a>
+            <a href="index.html" class="btn btn-outline-warning btn-sm"><i class="fas fa-arrow-right me-1"></i> العودة للمتجر</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h2 class="fw-bold mb-4 text-white"><i class="fas fa-shopping-bag text-warning me-2"></i> عربة التسوق الخاصة بك</h2>
+        
+        <div class="row g-4">
+            <!-- جدول المنتجات بالسلة -->
+            <div class="col-lg-8">
+                <div class="card bg-amazon-card border-0 p-4 rounded-3 shadow">
+                    <div id="cart-page-container">
+                        <!-- تظهر المنتجات هنا برمجياً -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- الفاتورة الجانبية الصارمة -->
+            <div class="col-lg-4">
+                <div class="card bg-amazon-card border-0 p-4 rounded-3 shadow text-white">
+                    <h5 class="fw-bold mb-3 pb-2 border-bottom border-secondary">ملخص الطلب</h5>
+                    <div class="d-flex justify-content-between mb-2 text-muted">
+                        <span>إجمالي المنتجات:</span>
+                        <span id="subtotal-val">0 ج.م</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3 text-muted">
+                        <span>مصاريف الشحن الكلي:</span>
+                        <span id="shipping-val">0 ج.م</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-4 fs-4 fw-bold text-warning border-top border-secondary pt-3">
+                        <span>الإجمالي:</span>
+                        <span id="total-val">0 ج.م</span>
+                    </div>
+                    <button class="btn btn-warning w-100 py-3 fw-bold fs-5 text-dark" onclick="checkoutOrder()">تأكيد وشراء الطلب الآن</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // تشغيل واجهة السلة بمجرد فتح الصفحة
+        if (typeof renderCartPage === "function") { renderCartPage(); }
+    </script>
+</body>
+</html>
